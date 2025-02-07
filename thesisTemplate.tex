@@ -1,0 +1,257 @@
+\PassOptionsToPackage{bookmarks={false}}{hyperref}
+\documentclass[review,los,12pt]{ryethesis}
+\usepackage{amsmath,amsfonts,amsthm,lipsum,textcomp,float,amscd,amssymb,verbatim,mathrsfs,color,bbold,amsmath,comment,graphicx,listings}
+\usepackage[normalem]{ulem}
+\usepackage{booktabs}
+
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\usepackage{multirow} 
+\usepackage{alltt}
+\usepackage{svg}
+\usepackage{longtable}
+\usepackage{csvsimple}
+\usepackage{pgfplotstable}
+\usepackage{rotating}
+
+\useunder{\uline}{\ul}{}
+\usepackage{enumitem}
+
+
+\usepackage{fancyhdr}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+% your new footer definitions here
+\usepackage{appendix}
+\pagestyle{fancy}
+\fancyhf{}
+% \fancyhead[RO]{\rightmark}
+% \fancyhead[LE]{\leftmark}
+
+\fancyfoot[C]{\thepage}
+
+
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+
+%\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+
+% \numberwithin{equation}{section}
+
+
+ \renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\ep}{\varepsilon}
+\newcommand{\al}{\alpha}
+\newcommand{\lam}{\lambda}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+\newcommand{\Sig}{\Sigma}
+\newcommand{\vp}{\varphi}
+\newcommand{\up}{\upsilon}
+\newcommand{\ES}{\mathrm{ES}}
+\newcommand{\Var}{\mathrm{Var}}
+
+\newcommand{\wl}{\mbox{Weak\/$L^1$}}
+\newcommand{\llf}{(\oplus \ell^1(n))_{\ell^\infty}}
+\newcommand{\lc}{(\oplus \ell^1(n))_{c_0}}
+\newcommand{\llfd}{(\oplus \ell^1(d_n))_{\ell^\infty}}
+\newcommand{\lcd}{(\oplus \ell^1(d_n))_{c_0}}
+
+
+
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\bigabs}[1]{\bigl\lvert#1\bigr\rvert}
+\newcommand{\bignorm}[1]{\bigl\lVert#1\bigr\rVert}
+\newcommand{\Bigabs}[1]{\Bigl\lvert#1\Bigr\rvert}
+\newcommand{\Bignorm}[1]{\Bigl\lVert#1\Bigr\rVert}
+
+
+
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\bs}{\backslash}
+\newcommand{\LR}{\Longleftrightarrow}
+\newcommand{\hr}{\hookrightarrow}
+\newcommand{\ol}{\overline}
+\newcommand{\ti}{\widetilde}
+\newcommand{\wh}{\hat}
+\newcommand{\ms}{(\Omega,\Sigma,\mu)}
+
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\inte}{\operatorname{int}}
+\newcommand{\Lip}{\operatorname{Lip}}
+\newcommand{\lip}{\operatorname{lip}}
+\newcommand{\rg}{\operatorname{range}}
+\newcommand{\loc}{{\operatorname{loc}}}
+\newcommand{\Fac}{\operatorname{Fac}}
+\newcommand{\rng}{\operatorname{range}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\UC}{\operatorname{UC}}
+\newcommand{\co}{\operatorname{co}}
+\newcommand{\uo}{{\operatorname{uo}}}
+
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\E}{{\mathbb E}}
+\newcommand{\cO}{{\mathcal O}}
+\newcommand{\cG}{{\mathcal G}}
+\newcommand{\cD}{{\mathcal D}}
+\newcommand{\cH}{{\mathcal H}}
+\newcommand{\cM}{{\mathcal M}}
+\newcommand{\cS}{{\mathcal S}}
+\newcommand{\cX}{{\mathcal X}}
+\newcommand{\cA}{{\mathcal A}}
+\newcommand{\cZ}{{\mathcal Z}}
+\newcommand{\cU}{{\mathcal U}}
+\newcommand{\cI}{{\mathcal I}}
+\newcommand{\fB}{{\mathfrak B}}
+\newcommand{\T}{{\mathfrak{T}}}
+\newcommand{\bu}{{\mathbf{u}}}
+\newcommand{\cQ}{{\mathcal Q}}
+\newcommand{\cW}{{\mathcal W}}
+\newcommand{\cK}{{\mathcal K}}
+\newcommand{\cC}{{\mathcal C}}
+\newcommand{\cF}{{\mathcal F}}
+\newcommand{\cB}{{\mathcal B}}
+\newcommand{\bP}{{\mathbb P}}
+\newcommand{\cP}{{\mathcal P}}
+\newcommand{\X}{{\textbf X}}
+\newcommand{\x}{{\textbf x}}
+\newcommand{\W}{{\textbf W}}
+\def\one{\mathbb 1}
+
+
+
+
+
+% Available options to ryethesis class:
+% draft - Produce a one-sided, double-spaced draft (figures replaced by placeholders).
+% review - Produce a one-sided, 1.5-spaced version for review by examiners.
+% final (default) - Produce a two-sided, 1.5-spaced final version
+% lof (default) | nolof - Enable | disable a list of figures
+% lop | nolop (default) - Enable | disable a list of plates
+% loi | noloi (default) - Enable | disable a list of illustrations
+% lot (default) | nolot - Enable | disable a list of tables
+% loa (default) | noloa - Enable | disable a list of appendices (separate from TOC)
+% los | nolos (default) - Enable | disable a list of symbols (nomenclature)
+% glossary | noglossary (default) - Enable | disable a glossary of terms
+% index | noindex (default) - Enable | disable an index
+
+% \nolistoftables
+% \nolistoffigures
+
+
+
+\author{FirstName LastName}
+
+\title{Thesis Title}
+
+\degreeName{Master of Science (M.Sc.)}
+
+\degreeYear{2025} % Enter Year here
+
+\program{Computer Science}
+
+\prevDegreeA{Bachelor of Field}{Some University}{2018} % for example \prevDegreeA{Bachelor of Science}{Ryerson University}{2013}
+
+
+
+\abstract{
+Maximum of 150 words for a MSc thesis.
+}
+
+
+\acknowledgements{Put acknowledgments here.
+%\\ \\
+%First\_Name Last\_Name
+}
+
+
+\dedication{
+Put dedication here (optional).}
+
+
+\bibliographystyle{acm}
+
+\addtoreferences{ryesample}
+
+
+\renewcommand{\contentsname}{Table of Contents}
+
+
+
+
+
+
+
+\begin{document}
+\chapter{Introduction}
+\label{cha:intro}
+
+\chapter{Literature Review}
+\label{cha:lit_review}
+
+\chapter{Technical Background}
+\label{cha:technical_background}
+
+\chapter{Methodology}
+\label{cha:methodology}
+
+\chapter{Results}
+\label{cha:results}
+
+
+\chapter{Discussion and threats to validity}
+\label{cha:discussion}
+
+\chapter{Conclusion}
+
+\newpage
+\addcontentsline{toc}{chapter}{Appendices}
+\appendix{
+\begin{appendices}
+
+\end{appendices}
+}
+
+\typeout{**************************************************************************}
+\typeout{}
+\typeout{This sample file includes nomenclature (a List of Symbols). Please run:}
+\typeout{     makeindex ryesample.nlo -s nomencl.ist -o ryesample.nls}
+\typeout{}
+\typeout{}
+\typeout{This sample file includes a glossary. Please run:}
+\typeout{   makeglossaries ryesample}
+\typeout{}
+\typeout{}
+\typeout{This sample file includes an index. Please run:}
+\typeout{   makeindex ryesample}
+\typeout{}
+\typeout{}
+\typeout{This sample file includes a bibliography. Please run:}
+\typeout{   bibtex ryesample}
+\typeout{}
+\typeout{Reprocess the document using LaTeX again, two more times to include the}
+\typeout{above sections.}
+\typeout{}
+\typeout{**************************************************************************}
+
+
+\end{document}
