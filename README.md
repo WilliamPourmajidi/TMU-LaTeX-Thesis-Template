@@ -65,15 +65,5 @@ This repository provides a LaTeX template for MSc and PhD theses at Toronto Metr
      latexmk -pdf thesisTemplate.tex
      ```
 
-## Tips
 
-- If you notice missing references or a blank table of contents, additional LaTeX passes are usually needed.
-- Adjust citation styles in `thesisTemplate.tex` if you prefer numeric or author–year citations.
-- Rebuild the class file after any changes to `ryethesis.dtx` by running `ryethesis.ins`.
-
-## Contributing
-
-Feel free to open issues or submit pull requests for improvements or bug fixes. Feedback is welcome.
-
-## License
 
