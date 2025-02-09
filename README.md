@@ -65,5 +65,20 @@ This repository provides a LaTeX template for MSc and PhD theses at Toronto Metr
      latexmk -pdf thesisTemplate.tex
      ```
 
+## Tips
 
+- If you notice missing references or a blank table of contents, additional LaTeX passes are usually needed.
+- Adjust citation styles in `thesisTemplate.tex` if you prefer numeric or author–year citations.
+- Rebuild the class file after any changes to `ryethesis.dtx` by running `ryethesis.ins`.
+
+## Credits
+
+- Much of the work is originally from [CTAN’s ryethesis package](https://ctan.org/tex-archive/macros/latex/contrib/ryethesis?lang=en) and the [Department of Mathematics at Toronto Metropolitan University](https://www.torontomu.ca/math/graduate-studies/current-student-forms-guidelines/).
+- Special thanks to [Montgomery Gole](https://www.linkedin.com/in/montgomery-gole?originalSubdomain=ca) for fixing page bugs and ensuring smooth compilation.
+
+## Contributing
+
+Feel free to open issues or submit pull requests for improvements or bug fixes. Feedback is welcome.
+
+## License
 
